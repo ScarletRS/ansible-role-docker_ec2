@@ -15,4 +15,5 @@ galaxy_info:
     - docker
     - ec2
 
- dependencies: []
+dependencies: []
+
