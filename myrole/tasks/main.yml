@@ -1,0 +1,31 @@
+---
+- name: Remove conflicting containerd if present
+  become: yes
+  apt:
+    name: containerd
+    state: absent
+    purge: yes
+  ignore_errors: yes
+
+- name: Remove containerd.io if present
+  become: yes
+  apt:
+    name: containerd.io
+    state: absent
+    purge: yes
+  ignore_errors: yes
+
+- name: Update apt cache
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: Install Docker
+  become: yes
+  apt:
+    name: docker.io
+    state: present
+
+
+
+# tasks file for myrole

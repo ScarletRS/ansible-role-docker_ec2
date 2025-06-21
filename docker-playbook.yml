@@ -1,0 +1,6 @@
+- name: Install Docker on EC2 with Galaxy Role
+  hosts: dockerhost
+  become: true
+
+  roles:
+    - bsmeding.docker
